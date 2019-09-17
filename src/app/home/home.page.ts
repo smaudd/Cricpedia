@@ -52,6 +52,21 @@ export class HomePage {
 }
 **/
 
+  const teams = [
+    { id: 47, name: "Adelaide Strikers"},
+    { id: 48, name: "Brisbane Heat"},
+    { id: 49, name: "Hobart Hurricanes"},
+    { id: 50, name: "Melbourne Renegades"},
+    { id: 51, name: "Melbourne Stars"},
+    { id: 52, name: "Perth Scorchers"},
+    { id: 53, name: "Sydney Sixers"},
+    { id: 54, name: "Sydney Thunder"},
+  ];
+
+  findTeam(id, team, teamId) {
+    team = this.team.filter(item => item.id === id)[0].name;
+    teamId = this.team.filter(item => item.id === id)[0].id;
+  }
 
   async showModal2() {
     const modal = await this.modalController.create({
@@ -62,56 +77,9 @@ export class HomePage {
 
     modal.onDidDismiss()
       .then((dataReturned) => {
-        //this.teamId = dataReturned.data;
-        if(dataReturned.data==47)
-    {
-      this.team2='Adelaide Strikers';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==48)
-    {
-      this.team2='Brisbane Heat';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==49)
-    {
-      this.team2='Hobart Hurricanes';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==50)
-    {
-      this.team2='Melbourne Renegades';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==51)
-    {
-      this.team2='Melbourne Stars';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==52)
-    {
-      this.team2='Perth Scorchers';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==53)
-    {
-      this.team2='Sydney Sixers';
-      this.teamId2 = dataReturned.data;
-    }
-        if(dataReturned.data==54)
-    {
-      this.team2='Sydney Thunder';
-      this.teamId2 = dataReturned.data;
-    }
-        // console.log(''+user);
-    });
-
+        findTeam(dataReturned.data, this.team2, this.teamId2);
     return await modal.present();
   }
-
-
-
-
 
   async showModal1() {
     const modal = await this.modalController.create({
