@@ -1,0 +1,68 @@
+<!--<ion-content fullscreen>
+    <ion-header no-border>
+        <ion-toolbar>
+         <ion-title >Select Team</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid>
+      <ion-row *ngFor="let x of post; let i=index">
+        <ion-col *ngIf="i==0||i==1;">
+            <ion-item lines="none">
+              <ion-thumbnail style="margin: 7px" ><img [src]="x.image_path" /></ion-thumbnail>
+              <ion-label>{{ x.name }}</ion-label>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let x of post; let i=index">
+          <ion-col *ngIf="i==2||i==3;">
+              <ion-item lines="none">
+                <ion-thumbnail style="margin: 7px" ><img [src]="x.image_path" /></ion-thumbnail>
+                <ion-label>{{ x.name }}</ion-label>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let x of post; let i=index">
+            <ion-col *ngIf="i==4||i==5;">
+                <ion-item lines="none">
+                  <ion-thumbnail style="margin: 7px" ><img [src]="x.image_path" /></ion-thumbnail>
+                  <ion-label>{{ x.name }}</ion-label>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let x of post; let i=index">
+              <ion-col *ngIf="i==6||i==7;">
+                  <ion-item lines="none">
+                    <ion-thumbnail style="margin: 7px" ><img [src]="x.image_path" /></ion-thumbnail>
+                    <ion-label>{{ x.name }}</ion-label>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+    </ion-grid>
+</ion-content>-->
+<ion-content>
+    <ion-header no-border>
+        <ion-toolbar>
+         <ion-title >Select Team</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid class="grid-categories-left">
+        <ion-row *ngFor="let x of post; let i = index">
+          <ion-col *ngIf="i%2==0;">
+            <ion-item href lines="none" (click)="giveTeamid($event)" data-id="{{ x.id }}">
+              <img data-id="{{ x.id }}" class="imje" [src]="x.image_path"/>
+              <ion-label data-id="{{ x.id }}" text-left>{{ x.name }}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="grid-categories-right">
+        <ion-row *ngFor="let x of post; let i = index">
+          <ion-col *ngIf="i%2==1">
+            <ion-item href lines="none" (click)="giveTeamid($event)" data-id="{{ x.id }}">
+              <img data-id="{{ x.id }}" class="imje" [src]="x.image_path"/>
+              <ion-label data-id="{{ x.id }}" text-left>{{ x.name }}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

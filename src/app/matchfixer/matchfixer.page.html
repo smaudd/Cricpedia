@@ -1,0 +1,17 @@
+<ion-content>
+    <ion-header no-border>
+        <ion-toolbar>
+              <ion-item lines="none" (click)="goback()" ><ion-title >MY CRICPEDIA</ion-title></ion-item>
+        </ion-toolbar>
+    </ion-header>
+    <ion-grid>
+        <ion-col *ngFor="let x of fixture; let i = index">
+            <ion-row *ngIf="x.status != 'NS'">
+            <ion-label>
+                {{ x.note }}
+            </ion-label>
+        </ion-row>
+        </ion-col>
+    </ion-grid>
+    <ion-button type="button" (click)="goconsl()" size="default">Find Macthes</ion-button>
+</ion-content>

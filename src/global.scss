@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.custom-modal-css .modal-wrapper {
+    top: 6%;
+    bottom: 6%;
+    left: 13%;
+    right: 13%;
+    width: 74%;
+    height: 88%;
+    position: absolute; 
+    display: block;
+    border-radius: 40px;
+}
+.modal-wrapper {
+    background-color: black !important;
+  }
